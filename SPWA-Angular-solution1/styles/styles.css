@@ -1,0 +1,23 @@
+.message {
+  font-size: 1.3em;
+  padding: 5px;
+  width: 500px;
+  border-radius: 8px;
+}
+.messageGreen {
+  color: #00AD7C;
+  border-color: #00AD7C;
+  border: 3px solid;
+
+}
+
+.messageRed {
+  color: #E84A5F;
+  border-color: #E84A5F;
+  border: 3px solid;
+}
+
+.annotation {
+  font-size: 0.9em;
+  padding: 10px 0px 20px 10px;
+}
