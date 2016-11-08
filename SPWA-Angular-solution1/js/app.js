@@ -19,7 +19,7 @@
               //Empty spaces between commas will be ignored
               plates = plates.filter(function(n){ return n != undefined && n.trim()!= ""});
 
-              $scope.message = "You have entered "+plates.length;
+              //$scope.message = "You have entered "+plates.length;
 
               if (plates.length>3) {
                 $scope.message = "Too much!";
