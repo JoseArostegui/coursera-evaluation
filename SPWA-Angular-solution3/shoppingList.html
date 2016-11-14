@@ -1,7 +1,7 @@
 <h3 ng-if="foundItems.items.length>0">Search Result:</h3>
 <ol>
   <li ng-repeat="item in foundItems.items">
-   <button ng-click="onRemove({index: $index});">Remove Item</button>
+   <button ng-click="onRemove({index: $index});">Don't want this one!</button>
     {{item.name}}: {{item.description}}
   </li>
 </ol>
