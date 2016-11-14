@@ -1,0 +1,7 @@
+<h3>Search Result</h3>
+<ol>
+  <li ng-repeat="item in foundItems.items">
+    {{item.name}}
+    <button ng-click="onRemove({index: $index});">Remove Item</button>
+  </li>
+</ol>
