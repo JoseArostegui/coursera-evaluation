@@ -2,6 +2,10 @@
 <ol>
   <li ng-repeat="item in foundItems.items">
    <button ng-click="onRemove({index: $index});">Don't want this one!</button>
-    {{item.name}}: {{item.description}}
+    <span class="platename">{{item.name}}</span>
+    : {{item.description}}
   </li>
 </ol>
+<p ng-if="foundItems.items.length==0">
+  No items found!
+</p>
