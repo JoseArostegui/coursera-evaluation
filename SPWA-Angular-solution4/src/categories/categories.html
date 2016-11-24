@@ -1,0 +1,7 @@
+<h2>
+    Menu Categories
+</h2>
+
+<li ng-repeat="m in $ctrl.categoriesList">{{ m.name }}
+    <a ui-sref="items({catSelected: '{{ m.short_name }}'})" > See all items in category</a>
+</li>
