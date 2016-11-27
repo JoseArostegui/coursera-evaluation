@@ -9,7 +9,6 @@
     function NewsletterDataService($http, ApiPath, $q) {
         var service = this;
         var userLogged = {};
-        service.dishValidation = "NO EVAL";
 
         service.saveUser = function(user) {
             console.log("Save User");
@@ -17,32 +16,15 @@
         }
 
         service.getUser = function() {
-            console.log("Get User");
-            console.log(service.userLogged);
             return service.userLogged;
         }
-        service.getValidationStatus = function () {
-          return service.dishValidation;
-        }
-        service.validateShortName = function(shortName) {
 
-            // return $http.get(ApiPath + '/menu_items/' + shortName + '.json').then(function(response) {
-            //     console.log("Success logging response");
-            //     console.log(response);
-            //     console.log(response.status);
-            //     service.dishValidation = response.status
-            // }).catch(function(error) {
-            //      console.log("Error logging error");
-            //      console.log(error)
-            //      service.dishValidation = 500;
-            //  })
-     console.log("EN el servicio");
-     console.log(shortName);
-            if (shortName=="") {
-              //We return an empty true promise, because no parameter was specified
-              return $q.resolve( true );
+        service.validateShortName = function(shortName) {
+            if (shortName == "") {
+                //We return an empty true promise, because no parameter was specified
+                return $q.resolve(true);
             }
-            return $http.get(ApiPath + '/menu_items/' + shortName + '.json');
+            return $http.get(ApiPath + '/menu_items/' + shortName.toUpperCase() + '.json');
         }
 
         service.getAllCategories = function() {

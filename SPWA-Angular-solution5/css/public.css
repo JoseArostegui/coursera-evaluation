@@ -187,3 +187,30 @@ h3.menu-item-title {
 .ng-touched.ng-invalid {
   border: 3px red solid;
 }
+
+#dishFav {
+  text-transform: uppercase;
+}
+/*To avoid the uppercase of the placeholder text*/
+::-webkit-input-placeholder { /* WebKit browsers */
+    text-transform: none;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    text-transform: none;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    text-transform: none;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    text-transform: none;
+}
+
+#savedOk {
+  height: 129px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin: 150px 0px 0px 0px;
+
+}
