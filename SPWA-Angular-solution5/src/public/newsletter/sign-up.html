@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="form-group">
+
+        <form name="signUpForm" class="form-group" novalidate>
+            <div class="row">
+                <div class="col-xs-6">
+                    <label>*First Name</label>
+                    <input type="text" ng-model="newsCtrl.user.firstName" name="firstName" class="form-control" placeholder="Enter your first name here" required>
+                </div>
+                <div class="col-xs-6">
+                    <span class="form-validation-msg" ng-if="signUpForm.firstName.$error.required && signUpForm.firstName.$touched">
+                        Name is required!
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <label>*Last Name</label>
+                    <input type="text" ng-model="newsCtrl.user.lastName" name="lastName" class="form-control " placeholder="Enter your last name here" required>
+                </div>
+                <div class="col-xs-6">
+                    <span class="form-validation-msg" ng-if="signUpForm.lastName.$error.required && signUpForm.lastName.$touched">
+                        Last name is required!
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <label>*Email</label>
+                    <input type="email" ng-model="newsCtrl.user.email" name="email" class="form-control " placeholder="Enter your email here" required>
+                </div>
+                <div class="col-xs-6">
+                    <span class="form-validation-msg" ng-if="signUpForm.email.$error.required && signUpForm.email.$touched">
+                        Email is required!
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-6">
+                <label>Favourite Dish</label>
+                 <!-- <input name="fav" type="text" ng-model="newsCtrl.user.fav"  class="form-control" placeholder="Enter your favourite dish number here (example: L10=Chicken Broccoli)" my-directive> -->
+                 <input name="fav" ng-model="newsCtrl.user.fav" my-directive class="form-control" placeholder="For example L10 for Chicken Broccoli">
+              </div>
+              <div class="col-xs-6">
+                  <!-- <span class="form-validation-msg" ng-if="newsCtrl.getValidationStatus(signUpForm)==500 && signUpForm.favShortName.$touched"> -->
+                  <!-- <span class="form-validation-msg" ng-if="signUpForm.email.$error.notexists && signUpForm.favShortName.$touched"> -->
+                      <!-- Dish number is not valid! -->
+                  <!-- </span> -->
+              </div>
+            </div>
+            <button class="btn btn-primary" ng-click="newsCtrl.submit();" ng-disabled="signUpForm.$invalid">Login</button>
+            <!-- <button class="btn btn-primary" ng-click="newsCtrl.validateDish();">Validate</button> -->
+        <!-- dishValid=    {{newsCtrl.dishValid}} -->
+             <!-- Resultado = {{newsCtrl.getValidationStatus(signUpForm)}} -->
+
+
+        </form>
+
+    </div>
