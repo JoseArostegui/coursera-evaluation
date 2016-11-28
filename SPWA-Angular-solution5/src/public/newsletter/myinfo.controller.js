@@ -4,9 +4,9 @@
     angular.module('restaurant')
         .controller('MyInfoController', MyInfoController);
 
-    MyInfoController.$inject = ['NewsletterDataService'];
+    MyInfoController.$inject = ['NewsletterDataService', 'ApiPath'];
 
-    function MyInfoController(NewsletterDataService) {
+    function MyInfoController(NewsletterDataService, ApiPath) {
         var $ctrl = this;
         console.log("EN MyInfoController");
         $ctrl.user = NewsletterDataService.getUser();
@@ -18,6 +18,7 @@
             NewsletterDataService.getMenuItem($ctrl.user.fav).then(function(menuItem) {
                 console.log(menuItem);
                 $ctrl.menuItem = menuItem;
+                $ctrl.basePath = ApiPath;
 
             }).catch(function() {
                 console.log("Dish not found!");

@@ -9,27 +9,44 @@
             <fieldset ng-disabled="true">
                 <div class="row">
                     <div class="col-xs-6">
-                        <label>First Name</label>
+                        <label>Your First Name:</label>
                         <input type="text" ng-model="myinfoCtrl.user.firstName" name="firstName" class="form-control" placeholder="Enter your first name here" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-6">
-                        <label>Last Name</label>
+                        <label>Your Last Name:</label>
                         <input type="text" ng-model="myinfoCtrl.user.lastName" name="lastName" class="form-control " placeholder="Enter your last name here" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-6">
-                        <label>Email</label>
+                        <label>Your Email:</label>
                         <input type="email" ng-model="myinfoCtrl.user.email" name="email" class="form-control " placeholder="Enter your email here" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-6">
-                        <label>Favourite Dish</label>
-                        <menu-item menu-item="myinfoCtrl.menuItem">
-                        </menu-item>                        
+                        <label>Your Favourite Dish:</label>
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <div class="menu-item-photo">
+                                    <div>{{myinfoCtrl.menuItem.short_name}}</div>
+                                    <img class="img-responsive" width="250" height="150" ng-src="{{myinfoCtrl.basePath}}/images/{{myinfoCtrl.menuItem.short_name}}.jpg" alt="{{myinfoCtrl.menuItem.name}}">
+                                </div>
+                                <div class="menu-item-price">{{myinfoCtrl.menuItem.price_small | currency}}
+                                    <span>
+                                        {{myinfoCtrl.menuItem.small_portion_name}}</span>
+                                    {{myinfoCtrl.menuItem.price_large | currency}}
+                                    <span>{{myinfoCtrl.menuItem.large_portion_name}}</span>
+                                </div>
+                            </div>
+                            <div class="menu-item-description col-sm-7">
+                                <h3 class="menu-item-title">{{myinfoCtrl.menuItem.name}}</h3>
+                                <p class="menu-item-details">{{myinfoCtrl.menuItem.description}}</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </fieldset>

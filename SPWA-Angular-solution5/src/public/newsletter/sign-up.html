@@ -8,7 +8,7 @@
         <form name="signUpForm" class="form-group" novalidate ng-if="!newsCtrl.getDataSaved()">
             <div class="row">
                 <div class="col-xs-6">
-                    <label>*First Name</label>
+                    <label>*Your First Name:</label>
                     <input type="text" ng-model="newsCtrl.user.firstName" name="firstName" class="form-control" placeholder="Enter your first name here" required>
                 </div>
                 <div class="col-xs-6">
@@ -19,7 +19,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-6">
-                    <label>*Last Name</label>
+                    <label>*Your Last Name:</label>
                     <input type="text" ng-model="newsCtrl.user.lastName" name="lastName" class="form-control " placeholder="Enter your last name here" required>
                 </div>
                 <div class="col-xs-6">
@@ -30,7 +30,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-6">
-                    <label>*Email</label>
+                    <label>*Your Email:</label>
                     <input type="email" ng-model="newsCtrl.user.email" name="email" class="form-control " placeholder="Enter your email here" required>
                 </div>
                 <div class="col-xs-6">
@@ -41,7 +41,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-6">
-                    <label>Favourite Dish</label>
+                    <label>Your Favourite Dish:</label>
                     <!-- <input id="dishFav" name="fav" ng-model="newsCtrl.user.fav" my-directive class="form-control" placeholder="For example L10 for Chicken Broccoli"> -->
                     <input id="dishFav" name="fav" ng-blur="newsCtrl.validateDish(newsCtrl.user.fav, signUpForm)" ng-model="newsCtrl.user.fav" class="form-control" placeholder="For example L10 for Chicken Broccoli">
                 </div>
