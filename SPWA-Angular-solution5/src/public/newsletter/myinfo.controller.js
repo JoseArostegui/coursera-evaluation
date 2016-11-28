@@ -8,24 +8,16 @@
 
     function MyInfoController(NewsletterDataService, ApiPath) {
         var $ctrl = this;
-        console.log("EN MyInfoController");
         $ctrl.user = NewsletterDataService.getUser();
-        console.log($ctrl.user);
-        if ($ctrl.user != undefined) {
-            console.log("$ctrl.menuItem AA");
-            //$ctrl.menuItem = NewsletterDataService.getFavourite($ctrl.user.fav);
 
+        if ($ctrl.user != undefined && $ctrl.user.fav != undefined && $ctrl.user.fav != "") {
             NewsletterDataService.getMenuItem($ctrl.user.fav).then(function(menuItem) {
-                console.log(menuItem);
                 $ctrl.menuItem = menuItem;
                 $ctrl.basePath = ApiPath;
 
             }).catch(function() {
                 console.log("Dish not found!");
             });
-
-
-            console.log($ctrl.menuItem);
         }
 
         function getFavourite(shortName) {

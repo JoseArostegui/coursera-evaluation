@@ -11,8 +11,7 @@
         var userLogged = {};
         service.menuItem = null;
 
-        service.saveUser = function(user) {
-            console.log("Save User");
+        service.saveUser = function(user) {            
             service.userLogged = user;
         }
 

@@ -25,14 +25,14 @@
                         <input type="email" ng-model="myinfoCtrl.user.email" name="email" class="form-control " placeholder="Enter your email here" required>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xs-6">
+                <div class="row" ng-if="myinfoCtrl.menuItem!=null">
+                    <div class="col-xs-7">
                         <label>Your Favourite Dish:</label>
                         <div class="row">
-                            <div class="col-sm-5">
+                            <div class="col-sm-6">
                                 <div class="menu-item-photo">
                                     <div>{{myinfoCtrl.menuItem.short_name}}</div>
-                                    <img class="img-responsive" width="250" height="150" ng-src="{{myinfoCtrl.basePath}}/images/{{myinfoCtrl.menuItem.short_name}}.jpg" alt="{{myinfoCtrl.menuItem.name}}">
+                                    <img class="img-responsive" width="350" height="250" ng-src="{{myinfoCtrl.basePath}}/images/{{myinfoCtrl.menuItem.short_name}}.jpg" alt="{{myinfoCtrl.menuItem.name}}">
                                 </div>
                                 <div class="menu-item-price">{{myinfoCtrl.menuItem.price_small | currency}}
                                     <span>

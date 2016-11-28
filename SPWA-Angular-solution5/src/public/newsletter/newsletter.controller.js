@@ -14,19 +14,14 @@
             if (shortName != undefined) {
                 NewsletterDataService.getMenuItem(shortName).then(function(menuItem) {
                     form.fav.$setValidity('dishvalid', true);
-                }).catch(function() {                  
+                }).catch(function() {
                     form.fav.$setValidity('dishvalid', false);
                 });
             };
         };
 
-
-
         $ctrl.submit = function() {
-            console.log("USER SUBMITED:");
-            console.log($ctrl.user);
             NewsletterDataService.saveUser($ctrl.user);
-            NewsletterDataService.getUser();
         }
 
         $ctrl.getDataSaved = function() {
