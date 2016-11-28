@@ -3,6 +3,7 @@
         <div id="savedOk" ng-if="myinfoCtrl.user==undefined">
             <div class="row">
                 Not Signed Up Yet.
+                <a ui-sref="public.sign-up">Sign up Now!</a>
             </div>
         </div>
         <form name="signUpForm" class="form-group" novalidate ng-if="myinfoCtrl.user!=undefined">
