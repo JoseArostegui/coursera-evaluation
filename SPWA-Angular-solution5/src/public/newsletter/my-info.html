@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="form-group">
+        <div id="savedOk" ng-if="myinfoCtrl.user==undefined">
+            <div class="row">
+                Not Signed Up Yet.
+            </div>
+        </div>
+        <form name="signUpForm" class="form-group" novalidate ng-if="myinfoCtrl.user!=undefined">
+            <fieldset ng-disabled="true">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label>First Name</label>
+                        <input type="text" ng-model="myinfoCtrl.user.firstName" name="firstName" class="form-control" placeholder="Enter your first name here" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label>Last Name</label>
+                        <input type="text" ng-model="myinfoCtrl.user.lastName" name="lastName" class="form-control " placeholder="Enter your last name here" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label>Email</label>
+                        <input type="email" ng-model="myinfoCtrl.user.email" name="email" class="form-control " placeholder="Enter your email here" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label>Favourite Dish</label>
+                        <menu-item menu-item="myinfoCtrl.menuItem">
+                        </menu-item>                        
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

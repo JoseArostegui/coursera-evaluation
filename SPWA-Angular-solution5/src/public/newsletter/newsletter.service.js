@@ -9,6 +9,7 @@
     function NewsletterDataService($http, ApiPath, $q) {
         var service = this;
         var userLogged = {};
+        service.menuItem = null;
 
         service.saveUser = function(user) {
             console.log("Save User");
@@ -25,6 +26,14 @@
                 return $q.resolve(true);
             }
             return $http.get(ApiPath + '/menu_items/' + shortName.toUpperCase() + '.json');
+        }
+        service.getMenuItem = function(shortName) {
+            if (shortName == "") {
+                return null;
+            }
+            return $http.get(ApiPath + '/menu_items/' + shortName.toUpperCase() + '.json').then(function (response) {
+              return response.data;
+            });
         }
 
         service.getAllCategories = function() {

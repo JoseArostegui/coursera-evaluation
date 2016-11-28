@@ -42,7 +42,8 @@
             <div class="row">
                 <div class="col-xs-6">
                     <label>Favourite Dish</label>
-                    <input id="dishFav" name="fav" ng-model="newsCtrl.user.fav" my-directive class="form-control" placeholder="For example L10 for Chicken Broccoli">
+                    <!-- <input id="dishFav" name="fav" ng-model="newsCtrl.user.fav" my-directive class="form-control" placeholder="For example L10 for Chicken Broccoli"> -->
+                    <input id="dishFav" name="fav" ng-blur="newsCtrl.validateDish(newsCtrl.user.fav, signUpForm)" ng-model="newsCtrl.user.fav" class="form-control" placeholder="For example L10 for Chicken Broccoli">
                 </div>
                 <div class="col-xs-6">
                     <span class="form-validation-msg" ng-if="!signUpForm.fav.$valid">
@@ -50,7 +51,7 @@
                     </span>
                 </div>
             </div>
-            <button class="btn btn-primary" ng-click="newsCtrl.submit();" ng-disabled="signUpForm.$invalid">Login</button>
+            <button class="btn btn-primary" ng-click="newsCtrl.submit();" ng-disabled="signUpForm.$invalid">Save Data</button>
         </form>
 
     </div>
