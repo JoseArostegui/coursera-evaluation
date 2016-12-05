@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
     assert = require('assert');
 
-var Leaderships = require('./models/leaderships');
+var Leadership = require('./models/leadership');
 
 // Connection URL
 var url = 'mongodb://localhost:27017/conFusion';
@@ -13,7 +13,7 @@ db.once('open', function() {
     console.log("Connected correctly to server");
 
     // create a new leadership
-    Leaderships.create({
+    Leadership.create({
         name: "Peter Pan",
         image: "images/alberto.png",
         designation: "Chief Epicurious Officer",
@@ -26,9 +26,9 @@ db.once('open', function() {
 
         var id = leadership._id;
 
-        // get all the leaderships
+        // get all the Leadership
         setTimeout(function() {
-            Leaderships.findByIdAndUpdate(id, {
+            Leadership.findByIdAndUpdate(id, {
                     $set: {
                         description: 'Updated Test'
                     }
@@ -41,7 +41,7 @@ db.once('open', function() {
                     console.log(leadership);
 
                     leadership.save(function(err, leadership) {
-                        db.collection('leaderships').drop(function() {
+                        db.collection('leaders').drop(function() {
                             db.close();
                         });
                     });
